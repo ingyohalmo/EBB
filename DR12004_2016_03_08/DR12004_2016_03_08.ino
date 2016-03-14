@@ -1,3 +1,9 @@
+/*********************************************************************
+  Yohalmo Alexander Diaz Ramirez
+  DR12004
+  EBB-115 Ciclo 1 2016
+*********************************************************************/
+
 #define FASTADC 1
 
 // defines for setting and clearing register bits
