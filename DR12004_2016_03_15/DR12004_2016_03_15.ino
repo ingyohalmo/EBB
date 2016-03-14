@@ -3,10 +3,9 @@
   Universidad Nacional de El Salvador, Facultad de Ingenieria Y Arquitectura.
   EBB-115 Ciclo 1 2016. 
   
-  Ing. Wilber Calderon.
+  MSc. e Ing. Wilber Calderon.
 
-  Yohalmo Alexander Diaz Ramirez.
-  DR12004.
+  Yohalmo Alexander Diaz Ramirez    DR12004.
 
   El siguiente codigo ha sido creado con el fin aprender la manera corecta 
   para utiliza la pantalla LCD Nokia-5110, utilizando 2 potenciometros se trazan
@@ -14,6 +13,30 @@
   de 0-45 se mueve hacia la derecha y arriba
   de 45-55 no hay ningun movimiento
   de 55-100 se mueve a la  izquierda y abajo
+
+  CIRCUITO:
+  -Potenciometro X(Analogico 0)
+  -Potenciometro Y(Analogico 1)
+  -Ambos a Tierra y 5V
+  
+  LCD De Izquierda a derecha(al 4050):
+  -RST al PIN 2 del 4050
+  -CE al PIN 4 del 4050
+  -DC al PIN 6 del 4050
+  -DIN al PIN 14 del 4050
+  -CLK al PIN 12 del 4050
+  -VCC a 3.3V
+  -LIGHT a Tierra
+  -GND a Tierra
+
+  4050 a Arduino:
+  -PIN 1 a 3.3V
+  -PIN 3 a Digital 3
+  -PIN 5 a Digital 4
+  -PIN 7 a Digital 5
+  -PIN 8 a Tierra
+  -PIN 11 a Digital 6
+  -PIN 14 a Digital 7
 
   REFERENCIAS:
   https://learn.sparkfun.com/tutorials/graphic-lcd-hookup-guide
@@ -78,7 +101,7 @@ void loop() {
 //funcion para retornar el valor, segun posicion del potenciometro
 int medir(int pin) {
   
-  float lectura = analogRead(pin); 
+  int lectura = analogRead(pin); 
   int voltaje = map(lectura, 0, 1023, 0, 100);//mapeo para encontrar porcentaje
   voltaje = constrain(voltaje, 0, 100);
 
